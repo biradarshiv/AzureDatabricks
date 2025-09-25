@@ -178,8 +178,51 @@ with mlflow.start_run():
 In this case, the experiment''s name is the name of the notebook. It''s possible to export a variable named MLFLOW_EXPERIMENT_NAME to change the name of your experiment should you choose.
 
 -- Register and serve models with MLflow
-- Registering a model allows you to serve the model for real-time, streaming, or batch inferencing. Registration makes the process of using a trained model easy, as now data scientists don't need to develop application code; the serving process builds that wrapper and exposes a REST API or method for batch scoring automatically.
+- Registering a model allows you to serve the model for real-time, streaming, or batch inferencing. Registration makes the process of using a trained model easy, as now data scientists don''t need to develop application code; the serving process builds that wrapper and exposes a REST API or method for batch scoring automatically.
 - Registering a model allows you to create new versions of that model over time; giving you the opportunity to track model changes and even perform comparisons between different historical versions of models.
+
+
+-------------------------------------------------------------------------------------------------------------------
+Module5 = Tune hyperparameters in Azure Databricks 
+Tuning hyperparameters is an essential part of machine learning. In Azure Databricks, you can use the Optune library to optimize hyperparameters automatically.
+
+The way a model learns is influenced not only by the data itself but also by hyperparameters—settings that control the training process. These aren''t learned from the data but are manually set before training begins, for example:
+
+In logistic regression, the regularization rate helps prevent overfitting by penalizing overly complex models.
+In neural networks, the learning rate determines how quickly the model updates its weights, affecting both speed and accuracy.
+
+In machine learning terminology, values learned from the data are called parameters. 
+To distinguish them from the values that configure the training process, we use the term hyperparameters.
+
+In Azure Databricks, you can use libraries like Optuna or Ray Tune for hyperparameter optimization. While both are powerful tools, in this module we focus on Optuna. Optuna intelligently explores the hyperparameter space, training and evaluating models repeatedly until it identifies the most effective configuration. This helps you build models that not only perform well but also generalize better to unseen data.
+
+Optuna is an open source Python library for hyperparameter optimization. Optuna is widely used for efficient and flexible hyperparameter tuning. To use it when training a model, follow these steps:
+- Define an objective function to train and evaluate a model.
+- Create an Optuna study to manage the optimization process.
+- Run the Optuna optimization to search for the best hyperparameters.
+
+
+-- Define an objective function
+Optuna works by iteratively calling an objective function that returns a numeric value to be minimized, this is the optimization target. You need to encapsulate your model training and evaluation logic in a function that:
+- Accepts a parameter (typically a trial object) used to suggest hyperparameter values.
+- Trains a model using the suggested hyperparameter values.
+- Evaluates the model based on a target metric for predictive performance.
+- Returns a numeric value that reflects the performance metric, such that improving model performance lowers the return value.
+
+-- Scale hyperparameter optimization
+Optuna supports distributed hyperparameter optimization through integration with various backends, including Apache Spark. 
+You can parallelize the optimization process across multiple nodes in your Databricks cluster using the optuna.integration.SparkOptimizer class.
+
+Some of the key benefits of using Optuna with Spark in Azure Databricks include:
+- Automatic distribution of trials across worker nodes
+- Built-in fault tolerance and recovery
+- Seamless integration with MLflow for experiment tracking
+- Support for both distributed and nondistributed ML libraries
+
+
+
+
+
 
 
 
