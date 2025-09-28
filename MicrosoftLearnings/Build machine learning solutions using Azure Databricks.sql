@@ -219,12 +219,57 @@ Some of the key benefits of using Optuna with Spark in Azure Databricks include:
 - Seamless integration with MLflow for experiment tracking
 - Support for both distributed and nondistributed ML libraries
 
+-------------------------------------------------------------------------------------------------------------------
+Module6 = Use AutoML in Azure Databricks
+AutoML in Azure Databricks simplifies the process of building an effective machine learning model for your data.
+
+databricksmaster_workspace.default.penguins
+
+-------------------------------------------------------------------------------------------------------------------
+Module7 = Train deep learning models in Azure Databricks
+
+Deep learning uses neural networks to train highly effective machine learning models for complex forecasting, computer vision, natural language processing, and other AI workloads.
+
+Deep learning is used to build complex models that support artificial intelligence challenges like computer vision and natural language processing.
+
+To train the model, a deep learning framework feeds multiple batches of input data (for which the actual label values are known), applies the functions in all of the network layers, and measures the difference between the output probabilities and the actual known class labels of the training data. The aggregated difference between the prediction outputs and the actual labels is known as the loss.
+
+Having calculated the aggregate loss for all the batches of data, the deep learning framework uses an optimizer to determine how the weights and biases in the model should be adjusted in order to reduce the overall loss. These adjustments are then backpropagated to the layers in the neural network model, and then the data is passed through the network again and the loss recalculated. This process repeats multiple times (each iteration is known as an epoch) until the loss is minimized and the model has "learned" the right weights and biases to be able to predict accurately.
+
+-- Distribute PyTorch training with TorchDistributor
+PyTorch, in common with other deep learning frameworks like TensorFlow, is designed to scale across multiple processors (CPUs or GPUs) on a single computer. In most cases, this approach to scaling up by using computers with more or faster processors provides adequate training performance.
+
+Azure Databricks uses Spark clusters that can include multiple worker nodes. To make optimal use of those clusters, you can use TorchDistributor, an open-source library that enables you to distribute PyTorch training jobs across the nodes in a cluster. TorchDistributor is available on Databricks Runtime ML 13.0 and above.
+
+When you already trained a model with PyTorch, you can convert your single process training to distributed training with TorchDistributor by:
+- Adapt your existing code: Modify your single-node training code to be compatible with distributed training. Ensure that your training logic is encapsulated within a single function.
+- Move imports within the training function: Place necessary imports, such as import torch, inside the training function to avoid common pickling errors.
+- Prepare the training function: Include your model, optimizer, loss function, and training loop within the training function. Ensure that the model and data are moved to the appropriate device (CPU or GPU).
+- Instantiate and run TorchDistributor: Create an instance of TorchDistributor with the desired parameters and call .run(*args) to launch the distributed training.
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://unifiedportal-mem.epfindia.gov.in/
+unified portal member login
 
 
 
