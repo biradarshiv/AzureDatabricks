@@ -247,21 +247,86 @@ When you already trained a model with PyTorch, you can convert your single proce
 - Prepare the training function: Include your model, optimizer, loss function, and training loop within the training function. Ensure that the model and data are moved to the appropriate device (CPU or GPU).
 - Instantiate and run TorchDistributor: Create an instance of TorchDistributor with the desired parameters and call .run(*args) to launch the distributed training.
 
+-------------------------------------------------------------------------------------------------------------------
+Module8 = Manage machine learning in production with Azure Databricks
+
+Machine learning enables data-driven decision-making and automation, but deploying models into production for real-time insights is challenging. Azure Databricks simplifies this process by providing a unified platform for building, training, and deploying machine learning models at scale, fostering collaboration between data scientists and engineers.
+
+-- Explore the machine learning workflow
+- Data collection: The data can be anything from numbers and images to text, depending on what the machine needs to learn.
+- EDA (Exploratory Data Analysis): Analyzing the data to summarize its main characteristics and uncover patterns.
+- Feature engineering: Creating new features or modifying existing ones to improve model performance.
+- Model selection: The model is a mathematical formula or algorithm that makes predictions by finding patterns in data.
+- Model training: The machine learning algorithm uses data to learn the patterns that connect the input (features) to the output (target). The model adjusts its parameters to minimize the difference between its predictions and the actual outcomes in the training data.
+- Model evaluation: The model''s performance is evaluated using a new set of data called the test set. Metrics such as accuracy, precision, recall, and the area under the ROC curve are used to evaluate different types of models.
+- Model optimization: The model''s parameters and algorithm are fine-tuned to improve its accuracy and efficiency.
+- Model deployment: The model is deployed into a production environment where it makes batch or real-time predictions.
+- Monitor and maintain: Continuous monitoring is crucial to ensure the model remains effective as new data and potential shifts in the underlying data distribution occur.
+
+To manage access to all data stored in cloud storage, use Unity Catalog. Unity Catalog provides a unified governance solution for all data assets, enabling you to manage permissions and access controls across your data estate.
+
+-- Automate feature engineering within Azure Databricks using Featuretools and AutoFeat
+Automated feature engineering tools and libraries, such as Featuretools and AutoFeat, are gaining popularity as they streamline the process of generating and selecting features. These tools use algorithms to automatically create features from raw data, evaluate their importance, and select the most relevant ones for modeling. This approach saves time and reduces the reliance on manual feature engineering.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+-------------------------------------------------------------------------------------------------------------------
+-- Python Libraries Used and their usage
+--2_Use Apache Spark in Azure Databricks
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+from pyspark.sql.functions import col
+from matplotlib import pyplot as plt
+--3_Build machine learning solutions using Azure Databricks
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.ml.evaluation import ClusteringEvaluator
+from pyspark.ml.linalg import Vectors
+from pyspark.ml.feature import StringIndexer
+from pyspark.ml.feature import VectorAssembler, MinMaxScaler
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer, VectorAssembler, MinMaxScaler
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.classification import DecisionTreeClassifier
+from pyspark.ml.pipeline import PipelineModel
+--4_Use MLflow in Azure Databricks
+import mlflow
+import mlflow.spark
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer, VectorAssembler, MinMaxScaler
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+import time
+from mlflow.models.signature import infer_signature
+--5_Tune hyperparameters in Azure Databricks
+import optuna
+import mlflow # if you wish to log your experiments
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer, VectorAssembler, MinMaxScaler
+from pyspark.ml.classification import DecisionTreeClassifier
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+--6_Use AutoML in Azure Databricks
+None since it is AutoML configured in UI only
+--7_Train deep learning models in Azure Databricks
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+from sklearn.model_selection import train_test_split
+import torch
+import torch.nn as nn
+import torch.utils.data as td
+import torch.nn.functional as F
+%matplotlib inline
+from matplotlib import pyplot as plt
+--8_Manage machine learning in production with Azure Databricks
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer, VectorAssembler, MinMaxScaler
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 
 
 
