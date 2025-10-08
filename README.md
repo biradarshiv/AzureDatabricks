@@ -7,3 +7,6 @@ Resource Utilization is as follows
 
 Register and Deploy the Model with endpoint
 <img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/56bc8de1-2400-4c60-9a23-5cd0d9fd7473" />
+
+ADF
+<img width="1919" height="972" alt="image" src="https://github.com/user-attachments/assets/5cbd0e4a-d715-45e7-bb1d-208b9aa8cd0d" />
