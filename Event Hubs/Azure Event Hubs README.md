@@ -5,6 +5,7 @@ Welcome to the "Real-Time Streaming with Azure Databricks" repository. This proj
 
 ## Getting Started
 To get started with this project, clone the repository and follow the guidance provided in this YouTube tutorial.
+https://www.youtube.com/watch?v=pwWIegHgNRw
 
 ## Repository Contents
 - `Real-time Data Processing with Azure Databricks (and Event Hubs).ipynb`: The Databricks notebook used for data processing at each layer of the medallion architecture.
@@ -17,3 +18,6 @@ To get started with this project, clone the repository and follow the guidance p
 - Azure Event Hubs Service.
 - Power BI Desktop (Windows).
 - Familiarity with Python, Spark, SQL, and basic data engineering concepts.
+
+## STEPS DONE
+Databricks > Compute > Open a Compute Cluster/Instance > Libraries > Install New > Maven > Specific Packages > select "Maven Central" > search eventshub-spark_2.12 > select > install 
