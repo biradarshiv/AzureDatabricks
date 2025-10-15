@@ -7,6 +7,9 @@ Welcome to the "Real-Time Streaming with Azure Databricks" repository. This proj
 To get started with this project, clone the repository and follow the guidance provided in this YouTube tutorial.
 https://www.youtube.com/watch?v=pwWIegHgNRw
 
+🔗 Spark Structured Streaming API: [https://spark.apache.org/docs/latest/...](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/index.html)
+🔗 Watermarking: [https://www.databricks.com/blog/featu...](https://www.databricks.com/blog/feature-deep-dive-watermarking-apache-spark-structured-streaming)
+
 ## Repository Contents
 - `Real-time Data Processing with Azure Databricks (and Event Hubs).ipynb`: The Databricks notebook used for data processing at each layer of the medallion architecture.
 - `data.txt`: Contains sample data and JSON structures for streaming simulation.
