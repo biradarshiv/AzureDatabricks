@@ -8,6 +8,7 @@ To get started with this project, clone the repository and follow the guidance p
 https://www.youtube.com/watch?v=pwWIegHgNRw
 
 🔗 Spark Structured Streaming API: [https://spark.apache.org/docs/latest/...](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/index.html)
+
 🔗 Watermarking: [https://www.databricks.com/blog/featu...](https://www.databricks.com/blog/feature-deep-dive-watermarking-apache-spark-structured-streaming)
 
 ## Repository Contents
