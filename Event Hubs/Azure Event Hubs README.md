@@ -21,3 +21,14 @@ https://www.youtube.com/watch?v=pwWIegHgNRw
 
 ## STEPS DONE
 Databricks > Compute > Open a Compute Cluster/Instance > Libraries > Install New > Maven > Specific Packages > select "Maven Central" > search eventshub-spark_2.12 > select > install 
+
+EventHubNameSpace > EventHub > Shared access Policies > Policy Name = 'databricks' > listen > create
+Now click on policy databricks, created in above step > Copy "Connection string-primay key" > assign this value to variable "connectionString" in the ipynb/notebook file
+variable "connectionString" = eh-demo
+
+Open event hub "eh-demo" > Features > Generate Data (Preview) > Dataset = User Defined Payload > Content Type = JSON > Click Send
+
+To open the file system click on Catalog > Browse DBFS (this is a top right corner button) > if not visible then Click on Your User name > Admin Settings > Workspace Settings > Advnaced > DBFS File Server > this should be enabled > Refresh the page
+
+
+
